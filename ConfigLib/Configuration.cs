@@ -65,8 +65,8 @@ namespace JSONConfig
             try
             {
                 var configs = Jil.JSON.Deserialize<Dictionary<string, string>>(System.IO.File.ReadAllText(configuration));
-                var result = configs.FirstOrDefault(x => x.Key == key).ToString();
-                return result == "[, ]" ? "" : result;
+                var result = configs.FirstOrDefault(x => x.Key == key).Value;
+                return result ?? "";
             }
             catch (Exception e)
             {
