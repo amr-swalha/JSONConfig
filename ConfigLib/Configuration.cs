@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace JSONConfig
@@ -20,10 +21,20 @@ namespace JSONConfig
         /// <summary>
         /// Create a new instance of Configuration, the default location of the file is the dll folder and the default name of the file is config.json
         /// </summary>
-        public Configuration()
+        public Configuration(bool createConfigJson = false)
         {
             ConfigFile = "config.json";
-            ConfigurationPath = AppDomain.CurrentDomain.BaseDirectory + ConfigFile;
+            ConfigurationPath = AppDomain.CurrentDomain.BaseDirectory;
+            if (createConfigJson)
+            {
+                using (File.Create(configuration))
+                {
+                    
+                }
+                Dictionary<string, string> val = new Dictionary<string, string>();
+                val.Add("dbconnection", "value");
+                File.WriteAllText(configuration,Jil.JSON.Serialize(val));
+            }
         }
         /// <summary>
         /// Add the new config file name, make sure you place it right next to the dll.
