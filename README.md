@@ -1,8 +1,7 @@
 
-
+[![NuGet](https://img.shields.io/badge/nuget-1.0-blue.svg)](https://www.nuget.org/packages/JSON.Config)
 JSON.Config
 -----------
-
 So this is you trying to handle all these missed up config files written in xml. 
 
 ![](https://fat.gfycat.com/OrangeVastAntarcticgiantpetrel.gif)
@@ -30,4 +29,3 @@ Now simply call ConfigValue and get the value of your desired config:
 If your key does not exists, it will return empty string.
 
 That's all :) Happy coding
-

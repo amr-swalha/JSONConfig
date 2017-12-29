@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>JSONConfig</id>
+    <id>JSON.Config</id>
     <version>1.0.0</version>
-    <title>JSONConfig - A replacment for web.config</title>
+    <title>JSON.Config - A replacment for web.config</title>
     <authors>Amr Swalha</authors>
     <owners></owners>
     <description>
-      A replacment for .config files. Where you simply create JSON keyvalue pair files and place your configs inside it.
+      A replacment for .config files. Where you simply create JSON keyvalue pair files and place your configs inside it. More documentation on the Project Site:https://github.com/amr-swalha/JSONConfig
     </description>
     <releaseNotes>
     </releaseNotes>

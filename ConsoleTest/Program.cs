@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JSONConfig;
-
+using System.Configuration;
 namespace ConsoleTest
 {
     class Program
