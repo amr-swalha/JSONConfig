@@ -7,7 +7,7 @@ So this is you trying to handle all these missed up config files written in xml.
 
 With JSON.Config, say goodbye to missed up configurations. And you can have your configs placed in one place where you can have all your applications access it and read the needed configs.
 
-Currently the Package are quite simple, and we hope that we can advanced it even more. It uses the super fast [Jil](https://github.com/kevin-montrose/Jil) as it's JSON serializer. 
+Currently the Package are quite simple, and we hope that we can advanced it even more. It uses the super fast [Jil](https://github.com/kevin-montrose/Jil) as it's JSON serializer/Deserialize. 
 
 Getting Started
 ---------------
