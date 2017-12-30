@@ -1,6 +1,5 @@
 
-[![NuGet](https://img.shields.io/badge/nuget-1.0-blue.svg)](https://www.nuget.org/packages/JSON.Config)
-JSON.Config
+ JSON.Config [![NuGet](https://img.shields.io/badge/nuget-1.0-blue.svg)](https://www.nuget.org/packages/JSON.Config)
 -----------
 So this is you trying to handle all these missed up config files written in xml. 
 
@@ -25,7 +24,14 @@ After that, Just create a new instance of the Configuration Class and you are al
 Now simply call ConfigValue and get the value of your desired config:
 
     configuration.ConfigValue("dbconnection");
+The json file is just a really simple key value pair JSON:
+
+    {
+    	"dbconnection": "value"
+    }
 
 If your key does not exists, it will return empty string.
 
 That's all :) Happy coding
+
+
