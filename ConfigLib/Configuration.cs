@@ -31,8 +31,10 @@ namespace JSONConfig
                 {
                     
                 }
-                Dictionary<string, string> val = new Dictionary<string, string>();
-                val.Add("dbconnection", "value");
+                Dictionary<string, string> val = new Dictionary<string, string>
+                {
+                    { "dbconnection", "value" }
+                };
                 File.WriteAllText(configuration,Jil.JSON.Serialize(val));
             }
         }
@@ -54,6 +56,11 @@ namespace JSONConfig
         {
             ConfigurationPath = configurationPath;
             ConfigFile = configFile;
+        }
+
+        public Configuration(Uri uri)
+        {
+            
         }
         /// <summary>
         /// To get the key from the config file
