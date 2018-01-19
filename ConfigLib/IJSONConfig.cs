@@ -8,7 +8,7 @@ namespace JsonConfiguration
 {
     public interface IJsonConfiguration
     {
-        void ConfigurationSource();
+        void ConfigurationSource(IConfigurationSource configurationSource);
     }
 
     public interface IConfigurationSource
