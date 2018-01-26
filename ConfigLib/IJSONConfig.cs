@@ -20,7 +20,7 @@ namespace JsonConfiguration
 
     class ConfigurationSource : IConfigurationSource
     {
-        public void DbSource(string pathToFile)
+        public void DbSource(string connectionString)
         {
             throw new NotImplementedException();
         }
@@ -34,7 +34,7 @@ namespace JsonConfiguration
             throw new NotImplementedException();
         }
 
-        public void WebSource(string pathToFile)
+        public void WebSource(string url)
         {
             throw new NotImplementedException();
         }
