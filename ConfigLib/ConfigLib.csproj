@@ -48,6 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration.cs" />
+    <Compile Include="Declarations\IJsonConfigurationData.cs" />
+    <Compile Include="Declarations\IJsonConfigurationDataSource.cs" />
+    <Compile Include="Declarations\IJsonConfigurationSource.cs" />
+    <Compile Include="Declarations\JsonConfigurationData.cs" />
+    <Compile Include="Declarations\JsonConfigurationDataSource.cs" />
+    <Compile Include="Declarations\JsonConfigurationSource.cs" />
+    <Compile Include="Declarations\SourceType.cs" />
     <Compile Include="IJSONConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
