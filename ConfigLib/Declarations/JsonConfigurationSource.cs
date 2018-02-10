@@ -12,12 +12,16 @@ namespace JSONConfig.Source
     /// </summary>
     public class JsonConfigurationSource : IJsonConfigurationSource
     {
+        #region Declarations
         public IJsonConfigurationDataSource DataSource { get; set; }
         public JsonConfigurationSource(IJsonConfigurationDataSource dataSource)
         {
             DataSource = dataSource;
         }
-        /// <summary>
+        #endregion
+
+        #region DataOperations
+          /// <summary>
         /// To read the configs key and send back it's value
         /// </summary>
         /// <param name="key">Key name to get</param>
@@ -56,19 +60,7 @@ namespace JSONConfig.Source
             return result;
         }
 
-        private void SearchKey(string key,string json,ref IJsonConfigurationData result)
-        {
-
-            var searchResultUrl = Jil.JSON
-                .Deserialize<Dictionary<string, object>>(json)
-                .FirstOrDefault(x => x.Key == key);
-            var item = new Dictionary<string, string>
-            {
-                { key, string.IsNullOrEmpty(searchResultUrl.Value?.ToString()) ? "" : searchResultUrl.ToString() }
-            };
-            result.IsSuccessed = !string.IsNullOrEmpty(searchResultUrl.Value?.ToString());
-            result.Configs.Add(item);
-        }
+        
         public IJsonConfigurationData Write(IJsonConfigurationData data)
         {
             IJsonConfigurationData result = new JsonConfigurationData();
@@ -91,5 +83,24 @@ namespace JSONConfig.Source
             }
             return result;
         }
+        #endregion
+
+        #region InternalHelpers
+
+        private void SearchKey(string key,string json,ref IJsonConfigurationData result)
+        {
+
+            var searchResultUrl = Jil.JSON
+                .Deserialize<Dictionary<string, object>>(json)
+                .FirstOrDefault(x => x.Key == key);
+            var item = new Dictionary<string, string>
+            {
+                { key, string.IsNullOrEmpty(searchResultUrl.Value?.ToString()) ? "" : searchResultUrl.ToString() }
+            };
+            result.IsSuccessed = !string.IsNullOrEmpty(searchResultUrl.Value?.ToString());
+            result.Configs.Add(item);
+        }
+
+        #endregion
     }
 }
