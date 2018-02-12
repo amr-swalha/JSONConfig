@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Tracing;
 using System.Linq;
@@ -36,7 +37,21 @@ namespace JSONConfig.Source
                     case SourceType.Database:
                         using (SqlConnection connection = new SqlConnection(DataSource.Connection))
                         {
-
+                            connection.Open();
+                            SqlDataAdapter adapter = new SqlDataAdapter("JsonConfig_Read_Key",connection);
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@key", key);
+                            DataSet ds = new DataSet();
+                            adapter.Fill(ds);
+                            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                            {
+                                result.Configs.Add(new Dictionary<string, string> { { key, ds.Tables[0].Rows[0][0].ToString() } });
+                                result.IsSuccessed = true;
+                            }
+                            else
+                            {
+                                result.IsSuccessed = false;
+                            }
                         }
                         break;
                     case SourceType.FilePath:

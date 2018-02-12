@@ -21,5 +21,12 @@ namespace Lib.Test
             var result = source.Read("userId");
             Assert.IsTrue(result.IsSuccessed);
         }
+        [Test]
+        public void GetSqlData()
+        {
+            JsonConfigurationSource source = new JsonConfigurationSource(new JsonConfigurationDataSource(SourceType.Database,"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=JSONConfig;Data Source=."));
+            var result = source.Read("test");
+            Assert.IsTrue(result.IsSuccessed);
+        }
     }
 }
