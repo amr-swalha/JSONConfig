@@ -1,5 +1,5 @@
 ﻿using System;
-using JSONConfig.Source;
+using JsonConfiguration;
 using NUnit.Framework;
 
 namespace Lib.Test

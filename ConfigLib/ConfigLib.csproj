@@ -7,8 +7,8 @@
     <ProjectGuid>{05B6A8B4-9350-45FA-AE5F-1FDE88163A4D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JSONConfig</RootNamespace>
-    <AssemblyName>JSONConfig</AssemblyName>
+    <RootNamespace>JsonConfiguration</RootNamespace>
+    <AssemblyName>JsonConfiguration</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,9 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration.cs" />
     <Compile Include="Declarations\IJsonConfigurationData.cs" />
     <Compile Include="Declarations\IJsonConfigurationDataSource.cs" />
+    <Compile Include="Declarations\IJsonConfigurationLog.cs" />
     <Compile Include="Declarations\IJsonConfigurationSource.cs" />
     <Compile Include="Declarations\JsonConfigurationData.cs" />
     <Compile Include="Declarations\JsonConfigurationDataSource.cs" />

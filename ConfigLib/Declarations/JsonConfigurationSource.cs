@@ -2,11 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Net;
 
-namespace JSONConfig.Source
+namespace JsonConfiguration
 {
     /// <summary>
     /// Handles the read/write operations to the different data sources
@@ -22,7 +21,7 @@ namespace JSONConfig.Source
         #endregion
 
         #region DataOperations
-          /// <summary>
+        /// <summary>
         /// To read the configs key and send back it's value
         /// </summary>
         /// <param name="key">Key name to get</param>
@@ -38,7 +37,7 @@ namespace JSONConfig.Source
                         using (SqlConnection connection = new SqlConnection(DataSource.Connection))
                         {
                             connection.Open();
-                            SqlDataAdapter adapter = new SqlDataAdapter("JsonConfig_Read_Key",connection);
+                            SqlDataAdapter adapter = new SqlDataAdapter("JsonConfig_Read_Key", connection);
                             adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                             adapter.SelectCommand.Parameters.AddWithValue("@key", key);
                             DataSet ds = new DataSet();
@@ -55,13 +54,13 @@ namespace JSONConfig.Source
                         }
                         break;
                     case SourceType.FilePath:
-                        SearchKey(key,System.IO.File.ReadAllText(DataSource.Connection),ref result);
+                        SearchKey(key, System.IO.File.ReadAllText(DataSource.Connection), ref result);
                         break;
                     case SourceType.Url:
                         using (WebClient wc = new WebClient())
                         {
                             var json = wc.DownloadString(DataSource.Connection);
-                            SearchKey(key,json,ref result);
+                            SearchKey(key, json, ref result);
                         }
                         break;
                 }
@@ -75,7 +74,7 @@ namespace JSONConfig.Source
             return result;
         }
 
-        
+
         public IJsonConfigurationData Write(IJsonConfigurationData data)
         {
             IJsonConfigurationData result = new JsonConfigurationData();
@@ -102,7 +101,7 @@ namespace JSONConfig.Source
 
         #region InternalHelpers
 
-        private void SearchKey(string key,string json,ref IJsonConfigurationData result)
+        private void SearchKey(string key, string json, ref IJsonConfigurationData result)
         {
 
             var searchResultUrl = Jil.JSON

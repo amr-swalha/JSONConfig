@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace JSONConfig.Source
+namespace JsonConfiguration
 {
     /// <summary>
     /// represent the data to send or get from the data source

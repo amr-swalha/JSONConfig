@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace JSONConfig.Source
+namespace JsonConfiguration
 {
 	public interface IJsonConfigurationSource
 	{
