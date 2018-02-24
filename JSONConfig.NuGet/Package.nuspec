@@ -2,8 +2,8 @@
 <package >
   <metadata>
     <id>JSON.Config</id>
-    <version>1.1.0</version>
-    <title>JSON.Config - A replacement for web.config</title>
+    <version>1.1.1</version>
+    <title>JSON.Config - A replacement for web.config and other .config files</title>
     <authors>Amr Swalha</authors>
     <owners></owners>
     <description>
@@ -12,6 +12,7 @@
     <releaseNotes>
       -Adding a new better structure for the project.
       -Now you can read web urls, from database, from file
+      -Also, quick access the property you need
     </releaseNotes>
     <summary>
       A replacement for .config files via JSON.
