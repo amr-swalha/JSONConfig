@@ -28,5 +28,7 @@ namespace JsonConfiguration
 			get;
 			set;
 		}
+
+	    string Configuration { get; }
 	}
 }
