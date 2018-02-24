@@ -3,7 +3,8 @@
 -----------
 So this is you trying to handle all these missed up config files written in xml. 
 
-![](https://fat.gfycat.com/OrangeVastAntarcticgiantpetrel.gif)
+
+<img src="https://fat.gfycat.com/OrangeVastAntarcticgiantpetrel.gif" width="600" height="300"/>
 
 With JSON.Config, say goodbye to missed up configurations. And you can have your configs placed in one place where you can have all your applications access it and read the needed configs.
 
